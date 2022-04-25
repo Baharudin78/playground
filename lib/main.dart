@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:playground/widget/snackbar.dart';
+import 'package:playground/widget/text_field.dart';
 import './widget/counter_app.dart';
 
 void main() {
@@ -15,6 +17,9 @@ int nilai = 0;
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: CounterApp());
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: TextFieldLearn(),
+    );
   }
 }
