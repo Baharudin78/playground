@@ -170,6 +170,34 @@ class InstagramUI extends StatelessWidget {
           ),
         ],
       ),
+      bottomNavigationBar: BottomNavigationBar(
+          currentIndex: 4,
+          selectedItemColor: Colors.black,
+          unselectedItemColor: Colors.grey[300],
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          items: <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: "Home",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.search),
+              label: "Explore",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.video_camera_back_outlined),
+              label: "Reels",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.shop),
+              label: "Shop",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person_rounded),
+              label: "Profile",
+            ),
+          ]),
     );
   }
 }
