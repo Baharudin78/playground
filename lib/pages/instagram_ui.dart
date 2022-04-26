@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:playground/widget/instagram_wigdet/info_follow.dart';
 import 'package:playground/widget/instagram_wigdet/profil_info.dart';
+import 'package:playground/widget/instagram_wigdet/story_item.dart';
+import 'package:playground/widget/instagram_wigdet/tab_item.dart';
 
 class InstagramUI extends StatelessWidget {
   const InstagramUI({Key? key}) : super(key: key);
@@ -50,7 +52,10 @@ class InstagramUI extends StatelessWidget {
             padding: const EdgeInsets.only(right: 15, left: 15, top: 15),
             child: Row(
               children: [
+                //foto profil
                 ProfilInfo(),
+
+                //Membuat item follow
                 Expanded(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -64,6 +69,8 @@ class InstagramUI extends StatelessWidget {
               ],
             ),
           ),
+
+          //Membuat nama
           const SizedBox(
             height: 10,
           ),
@@ -74,6 +81,8 @@ class InstagramUI extends StatelessWidget {
               style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
             ),
           ),
+
+          //Membaut text deskripsi
           const SizedBox(
             height: 5,
           ),
@@ -95,6 +104,8 @@ class InstagramUI extends StatelessWidget {
               ),
             ),
           ),
+
+          //mmembuat Hyperlink text
           const SizedBox(
             height: 5,
           ),
@@ -105,14 +116,56 @@ class InstagramUI extends StatelessWidget {
               style: TextStyle(color: Colors.blue),
             ),
           ),
+
+          //Membuat button edit profil
           Padding(
             padding: const EdgeInsets.only(left: 15, right: 15),
             child: OutlinedButton(
               onPressed: () {},
-              child: Text(
+              child: const Text(
                 "Edit profil",
                 style: TextStyle(color: Colors.black),
               ),
+            ),
+          ),
+
+          //Membuat Story Highlight
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  StoryItem("Story 1"),
+                  StoryItem("Story 2"),
+                  StoryItem("Story 3"),
+                  StoryItem("Story 4"),
+                  StoryItem("Story 5"),
+                  StoryItem("Story 6"),
+                  StoryItem("Tambah Story"),
+                ],
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              TabItem(true, Icons.grid_on_outlined),
+              TabItem(false, Icons.person_pin_circle_outlined),
+            ],
+          ),
+          GridView.builder(
+            itemCount: 150,
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3, mainAxisSpacing: 5, crossAxisSpacing: 5),
+            itemBuilder: (context, index) => Image.network(
+              "https://picsum.photos/id/${index + 500}/536/354",
+              fit: BoxFit.cover,
             ),
           ),
         ],

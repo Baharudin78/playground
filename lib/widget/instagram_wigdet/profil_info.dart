@@ -24,12 +24,12 @@ class ProfilInfo extends StatelessWidget {
           ),
         ),
         Container(
-          width: 110,
-          height: 110,
+          width: 115,
+          height: 115,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(60),
             color: Colors.grey[300],
-            border: Border.all(color: Colors.white),
+            border: Border.all(color: Colors.white, width: 5),
             image: DecorationImage(
               fit: BoxFit.cover,
               image: NetworkImage("https://picsum.photos/536/354"),
